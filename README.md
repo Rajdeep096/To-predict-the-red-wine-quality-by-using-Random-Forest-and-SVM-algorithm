@@ -17,27 +17,27 @@ By examining the dataset, training different models, and conducting comparison, 
 # Tools/Analytics
 This section illustrates the procedural processes used in developing the model and performing the evaluation.
 1.	Data Preparation
-  •	Import the Python library: Pandas.
-  •	Reading the dataset from a .xls file using the Pandas library.
-  •	Assigning the input features (fixed acidity, volatile acidity, citric acid, residual sugar, chlorides, free sulfur dioxide, total sulfur dioxide, density, pH, sulfates, and alcohol) to a variable ('x') and the output feature (Quality) to another variable ('y').
+•	Import the Python library: Pandas.
+•	Reading the dataset from a .xls file using the Pandas library.
+•	Assigning the input features (fixed acidity, volatile acidity, citric acid, residual sugar, chlorides, free sulfur dioxide, total sulfur dioxide, density, pH, sulfates, and alcohol) to a variable ('x') and the output feature (Quality) to another variable ('y').
 2.	Data Split
-  •	Splitting the dataset into training and testing using sklearn.model_selection.train_test_split ( ) function and keeping the test_size = 0.2 where the training and test data is divided in 80-20 ratio.
-  •	Giving 'x_train' the training input data and 'y_train' the associated output data.
-  •	Assigning the test's input data to the variable "x_test" and the outcomes of the test to the variable "y_test".
+•	Splitting the dataset into training and testing using sklearn.model_selection.train_test_split ( ) function and keeping the test_size = 0.2 where the training and test data is divided in 80-20 ratio.
+•	Giving 'x_train' the training input data and 'y_train' the associated output data.
+•	Assigning the test's input data to the variable "x_test" and the outcomes of the test to the variable "y_test".
 3.	Model Development – Random Forest
-  •	The RandomForestRegressor function is used and imported from the sklearn.ensemble library.
-  •	To train the model, the value of n_estimator varies from 1000 to 10000 and as our total input is 11, max_feature = 10.
-  •	Here, the Output of the RandomForestRegressor function is assigned to b_model.
-  •	In .fit ( ), the x_train and y_train are passed as the parameters.
-  •	The mean of all the input variables is calculated by .mean ( )
-  •	The accuracy is calculated by mape = ape.mean (), where accuracy = 100 – mape.
+•	The RandomForestRegressor function is used and imported from the sklearn.ensemble library.
+•	To train the model, the value of n_estimator varies from 1000 to 10000 and as our total input is 11, max_feature = 10.
+•	Here, the Output of the RandomForestRegressor function is assigned to b_model.
+•	In .fit ( ), the x_train and y_train are passed as the parameters.
+•	The mean of all the input variables is calculated by .mean ( )
+•	The accuracy is calculated by mape = ape.mean (), where accuracy = 100 – mape.
 4.	Model Development – Support vector machines (SVMs)
-  •	The sklearn.svm.SVR function is used and imported from the sklearn.svm library.
-  •	To train the model, the kernel is set as linear, rbf and poly.
-  •	Here, the Output of the sklearn.svm.SVR function is assigned to b_model.
-  •	In .fit ( ), the x_train and y_train are passed as the parameters.
-  •	The mean of all the input variables is calculated by .mean ( )
-  •	The statistics library is imported, and the accuracy is calculated by mape = statistics.mean(ape), where accuracy = 100 – mape.
+•	The sklearn.svm.SVR function is used and imported from the sklearn.svm library.
+•	To train the model, the kernel is set as linear, rbf and poly.
+•	Here, the Output of the sklearn.svm.SVR function is assigned to b_model.
+•	In .fit ( ), the x_train and y_train are passed as the parameters.
+•	The mean of all the input variables is calculated by .mean ( )
+•	The statistics library is imported, and the accuracy is calculated by mape = statistics.mean(ape), where accuracy = 100 – mape.
 
 # Analysis
 In the given case, the analysis is done by considering the Random Forest algorithm and Support vector machines (SVMs) method. The rationalization is done for both methods, and here starting off with the RF method, the rationalization technique is conducted by first calculating the mean of the eleven input variables: fixed acidity, volatile acidity, citric acid, residual sugar, chlorides, free sulphur dioxide, total sulphur dioxide, density, pH, sulphates, alcohol, and quality. Further, for the development of the model, the value of n_estimators is taken as 1000, 5000, and 10000 and max_feature = 10. Max_feature is ten since we have eleven total input variables; hence, max_feature is n-1, where n=11, so max_feature=10. After studying Figures 1, 2, and 3, it is clearly observed that with n_estimators = 10000, the accuracy of the Random Forest (RF) Prediction Model is 91.6329, which is slightly better than the other two models. 
